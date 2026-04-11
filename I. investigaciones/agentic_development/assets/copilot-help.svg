@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="582" viewBox="0 0 1280 582">
+<rect width="100%" height="100%" rx="18" fill="#111827"/>
+<rect x="0" y="0" width="1280" height="44" rx="18" fill="#1f2937"/>
+<text x="24" y="28" fill="#e5e7eb" font-size="18" font-family="DejaVu Sans Mono, monospace" font-weight="700">Copilot CLI</text>
+<text x="24" y="58" fill="#22c55e" font-size="15" font-family="DejaVu Sans Mono, monospace">$ copilot --help</text>
+<text x="24" y="70" fill="#93c5fd" font-size="15" font-family="DejaVu Sans Mono, monospace">Usage: copilot [options] [command]</text>
+<text x="24" y="92" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">GitHub Copilot CLI - An AI-powered coding assistant.</text>
+<text x="24" y="114" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">Start an interactive session to chat with Copilot, or use -p/--prompt for</text>
+<text x="24" y="136" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">non-interactive scripting. Copilot can edit files, run shell commands, search</text>
+<text x="24" y="158" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">your codebase, and more — all with configurable permissions.</text>
+<text x="24" y="180" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">Run `copilot &lt;command&gt; --help` for details on any subcommand.</text>
+<text x="24" y="202" fill="#93c5fd" font-size="15" font-family="DejaVu Sans Mono, monospace">Options:</text>
+<text x="24" y="224" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --effort, --reasoning-effort &lt;level&gt;  Set the reasoning effort level (choices:</text>
+<text x="24" y="246" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">                                        "low", "medium", "high", "xhigh")</text>
+<text x="24" y="268" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --acp                                 Start as Agent Client Protocol server</text>
+<text x="24" y="290" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --add-dir &lt;directory&gt;                 Add a directory to the allowed list for</text>
+<text x="24" y="312" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">                                        file access (can be used multiple times)</text>
+<text x="24" y="334" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --add-github-mcp-tool &lt;tool&gt;          Add a tool to enable for the GitHub MCP</text>
+<text x="24" y="356" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">                                        server instead of the default CLI subset</text>
+<text x="24" y="378" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">                                        (can be used multiple times). Use "*"</text>
+<text x="24" y="400" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">                                        for all tools.</text>
+<text x="24" y="422" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --add-github-mcp-toolset &lt;toolset&gt;    Add a toolset to enable for the GitHub</text>
+<text x="24" y="444" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">                                        MCP server instead of the default CLI</text>
+<text x="24" y="466" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">                                        subset (can be used multiple times). Use</text>
+<text x="24" y="488" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">                                        "all" for all toolsets.</text>
+<text x="24" y="510" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --additional-mcp-config &lt;json&gt;        Additional MCP servers configuration as</text>
+<text x="24" y="532" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">                                        JSON string or file path (prefix with @)</text>
+</svg>
