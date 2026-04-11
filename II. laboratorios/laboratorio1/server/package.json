@@ -1,0 +1,13 @@
+{
+  "name": "pollclass-server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch index.ts",
+    "start": "bun index.ts"
+  },
+  "dependencies": {
+    "hono": "^4.6.12",
+    "mongoose": "^8.8.3"
+  }
+}
