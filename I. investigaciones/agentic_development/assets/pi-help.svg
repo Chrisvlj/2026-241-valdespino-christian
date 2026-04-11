@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="846" viewBox="0 0 1280 846">
+<rect width="100%" height="100%" rx="18" fill="#111827"/>
+<rect x="0" y="0" width="1280" height="44" rx="18" fill="#1f2937"/>
+<text x="24" y="28" fill="#e5e7eb" font-size="18" font-family="DejaVu Sans Mono, monospace" font-weight="700">Pi (pi-mono)</text>
+<text x="24" y="58" fill="#22c55e" font-size="15" font-family="DejaVu Sans Mono, monospace">$ npx -y @mariozechner/pi-coding-agent --help</text>
+<text x="24" y="70" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">pi - AI coding assistant with read, bash, edit, write tools</text>
+<text x="24" y="92" fill="#93c5fd" font-size="15" font-family="DejaVu Sans Mono, monospace">Usage:</text>
+<text x="24" y="114" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  pi [options] [@files...] [messages...]</text>
+<text x="24" y="136" fill="#93c5fd" font-size="15" font-family="DejaVu Sans Mono, monospace">Commands:</text>
+<text x="24" y="158" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  pi install &lt;source&gt; [-l]     Install extension source and add to settings</text>
+<text x="24" y="180" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  pi remove &lt;source&gt; [-l]      Remove extension source from settings</text>
+<text x="24" y="202" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  pi uninstall &lt;source&gt; [-l]   Alias for remove</text>
+<text x="24" y="224" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  pi update [source]           Update installed extensions (skips pinned sources)</text>
+<text x="24" y="246" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  pi list                      List installed extensions from settings</text>
+<text x="24" y="268" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  pi config                    Open TUI to enable/disable package resources</text>
+<text x="24" y="290" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  pi &lt;command&gt; --help          Show help for install/remove/uninstall/update/list</text>
+<text x="24" y="312" fill="#93c5fd" font-size="15" font-family="DejaVu Sans Mono, monospace">Options:</text>
+<text x="24" y="334" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --provider &lt;name&gt;              Provider name (default: google)</text>
+<text x="24" y="356" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --model &lt;pattern&gt;              Model pattern or ID (supports "provider/id" and optional ":&lt;thinking&gt;")</text>
+<text x="24" y="378" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --api-key &lt;key&gt;                API key (defaults to env vars)</text>
+<text x="24" y="400" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --system-prompt &lt;text&gt;         System prompt (default: coding assistant prompt)</text>
+<text x="24" y="422" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --append-system-prompt &lt;text&gt;  Append text or file contents to the system prompt</text>
+<text x="24" y="444" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --mode &lt;mode&gt;                  Output mode: text (default), json, or rpc</text>
+<text x="24" y="466" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --print, -p                    Non-interactive mode: process prompt and exit</text>
+<text x="24" y="488" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --continue, -c                 Continue previous session</text>
+<text x="24" y="510" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --resume, -r                   Select a session to resume</text>
+<text x="24" y="532" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --session &lt;path&gt;               Use specific session file</text>
+<text x="24" y="554" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --fork &lt;path&gt;                  Fork specific session file or partial UUID into a new session</text>
+<text x="24" y="576" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --session-dir &lt;dir&gt;            Directory for session storage and lookup</text>
+<text x="24" y="598" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --no-session                   Don't save session (ephemeral)</text>
+<text x="24" y="620" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --models &lt;patterns&gt;            Comma-separated model patterns for Ctrl+P cycling</text>
+<text x="24" y="642" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">                                 Supports globs (anthropic/*, *sonnet*) and fuzzy matching</text>
+<text x="24" y="664" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --no-tools                     Disable all built-in tools</text>
+<text x="24" y="686" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --tools &lt;tools&gt;                Comma-separated list of tools to enable (default: read,bash,edit,write)</text>
+<text x="24" y="708" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">                                 Available: read, bash, edit, write, grep, find, ls</text>
+<text x="24" y="730" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --thinking &lt;level&gt;             Set thinking level: off, minimal, low, medium, high, xhigh</text>
+<text x="24" y="752" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --extension, -e &lt;path&gt;         Load an extension file (can be used multiple times)</text>
+<text x="24" y="774" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --no-extensions, -ne           Disable extension discovery (explicit -e paths still work)</text>
+<text x="24" y="796" fill="#d1d5db" font-size="15" font-family="DejaVu Sans Mono, monospace">  --skill &lt;path&gt;                 Load a skill file or directory (can be used multiple times)</text>
+</svg>
