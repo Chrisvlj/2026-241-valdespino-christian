@@ -10,9 +10,25 @@
     "client": "bun run --cwd client dev",
     "server": "bun run --cwd server dev",
     "build": "bun run --cwd client build",
-    "install-all": "bun install"
+    "install-all": "bun install",
+    "test:e2e:install": "playwright install chromium",
+    "test:e2e:install:deps": "playwright install --with-deps chromium",
+    "test:e2e": "bun run test:e2e:install && playwright test -c tests/playwright.config.ts",
+    "test:e2e:all": "bun run test:e2e",
+    "test:e2e:smoke": "bun run test:e2e:install && playwright test -c tests/playwright.config.ts tests/e2e/smoke.spec.ts",
+    "test:e2e:routes": "bun run test:e2e:install && playwright test -c tests/playwright.config.ts --grep @routes --pass-with-no-tests",
+    "test:e2e:professor": "bun run test:e2e:install && playwright test -c tests/playwright.config.ts --grep @professor --pass-with-no-tests",
+    "test:e2e:student": "bun run test:e2e:install && playwright test -c tests/playwright.config.ts --grep @student --pass-with-no-tests",
+    "test:e2e:integration": "bun run test:e2e:install && playwright test -c tests/playwright.config.ts --grep @integration --pass-with-no-tests",
+    "test:e2e:headed": "bun run test:e2e:install && playwright test -c tests/playwright.config.ts --headed --project=chromium",
+    "test:e2e:ui": "bun run test:e2e:install && playwright test -c tests/playwright.config.ts --ui",
+    "test:e2e:debug": "bun run test:e2e:install && playwright test -c tests/playwright.config.ts --debug --project=chromium",
+    "test:e2e:record": "bun run test:e2e:install && playwright test -c tests/playwright.config.ts --project=chromium",
+    "test:e2e:record:headed": "bun run test:e2e:install && playwright test -c tests/playwright.config.ts --headed --project=chromium",
+    "test:e2e:report": "playwright show-report tests/artifacts/playwright-report"
   },
   "devDependencies": {
+    "@playwright/test": "^1.59.1",
     "concurrently": "^9.1.2"
   }
 }

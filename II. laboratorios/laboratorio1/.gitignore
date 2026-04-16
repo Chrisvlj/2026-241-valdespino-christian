@@ -8,6 +8,10 @@ server/dist/
 client/.vite/
 server/.vite/
 coverage/
+tests/artifacts/capturas/
+tests/artifacts/videos/
+tests/artifacts/playwright-report/
+tests/artifacts/test-results/
 *.tsbuildinfo
 *.log
 .env

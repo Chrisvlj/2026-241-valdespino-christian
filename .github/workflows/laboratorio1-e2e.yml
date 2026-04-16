@@ -1,0 +1,74 @@
+name: laboratorio1-e2e
+
+on:
+  pull_request:
+    paths:
+      - "II. laboratorios/laboratorio1/**"
+      - ".github/workflows/laboratorio1-e2e.yml"
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - "II. laboratorios/laboratorio1/**"
+      - ".github/workflows/laboratorio1-e2e.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: laboratorio1-e2e-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "II. laboratorios/laboratorio1"
+    services:
+      mongodb:
+        image: mongo:7
+        ports:
+          - 27017:27017
+        options: >-
+          --health-cmd "mongosh --eval \"db.adminCommand('ping')\""
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      CI: true
+      PORT: "3001"
+      VITE_API_URL: "http://127.0.0.1:3001"
+      MONGODB_URI: "mongodb://127.0.0.1:27017/pollclass_e2e"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Clean test artifacts (before)
+        run: rm -rf "tests/artifacts/capturas" "tests/artifacts/videos" "tests/artifacts/test-results" "tests/artifacts/playwright-report"
+
+      - name: Install Playwright browsers and OS deps
+        run: bun run test:e2e:install:deps
+
+      - name: Run E2E tests
+        run: bun run test:e2e:all
+
+      - name: Clean test artifacts (after)
+        if: always()
+        run: rm -rf "tests/artifacts/capturas" "tests/artifacts/videos" "tests/artifacts/test-results" "tests/artifacts/playwright-report"
+
+      - name: Verify artifacts are clean
+        if: always()
+        run: |
+          if [ -d "tests/artifacts/capturas" ] || [ -d "tests/artifacts/videos" ] || [ -d "tests/artifacts/test-results" ] || [ -d "tests/artifacts/playwright-report" ]; then
+            echo "Test artifacts were not cleaned"
+            exit 1
+          fi

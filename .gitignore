@@ -8,3 +8,15 @@ Thumbs.db
 # Environment
 .env
 .env.local
+
+# Node / Bun
+node_modules/
+dist/
+.vite/
+coverage/
+*.tsbuildinfo
+*.Zone.Identifier
+
+# Project env files
+.env.*
+!.env.example
