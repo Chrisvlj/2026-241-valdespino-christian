@@ -1,0 +1,5 @@
+# Presentacion grupal
+
+La presentacion esta en este link:
+
+https://utpac-my.sharepoint.com/:v:/g/personal/eriel_tensu_utp_ac_pa/IQBT6xQ_2ILsRZboC7PQrK5FATMDH3YhE8dEYybMXkHzBbo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=MhLeYe
