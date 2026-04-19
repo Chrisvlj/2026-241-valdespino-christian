@@ -12,6 +12,7 @@ nace, recibe votos y termina cerrada.
 - [04 - Modelo de datos](./04-modelo-datos.md)
 - [05 - Puertos y configuracion](./05-puertos-y-configuracion.md)
 - [06 - Historia de una encuesta completa](./06-historia-de-una-encuesta.md)
+- [Capturas de la aplicacion](./screenshots/)
 - [Testing Playwright (carpeta tests)](../tests/README.md)
 
 ## Vista rapida

@@ -136,6 +136,7 @@ bun run test:e2e:routes
 bun run test:e2e:professor
 bun run test:e2e:student
 bun run test:e2e:integration
+bun run test:e2e:validation
 
 # modos de ejecucion
 bun run test:e2e:headed
