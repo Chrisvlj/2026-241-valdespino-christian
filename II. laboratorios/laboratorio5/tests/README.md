@@ -4,6 +4,7 @@ Este directorio concentra todo lo relacionado a Playwright:
 
 - Configuracion: `tests/playwright.config.ts`
 - Specs E2E: `tests/e2e/`
+- Soporte y helpers: `tests/e2e/support/`
 - Artefactos: `tests/artifacts/`
 
 ## Comandos
@@ -25,6 +26,7 @@ bun run test:e2e:routes
 bun run test:e2e:professor
 bun run test:e2e:student
 bun run test:e2e:integration
+bun run test:e2e:validation
 
 # modos de ejecucion
 bun run test:e2e:headed
@@ -44,6 +46,7 @@ Los tests usan tags en el titulo para filtrar suites:
 - `@professor`
 - `@student`
 - `@integration`
+- `@validation`
 
 Ejemplo de nombre de test:
 
@@ -55,3 +58,10 @@ Ejemplo de nombre de test:
 - Videos: `tests/artifacts/videos/`
 - Resultado crudo: `tests/artifacts/test-results/`
 - Reporte HTML: `tests/artifacts/playwright-report/`
+
+## Flujos críticos cubiertos
+
+- Profesor crea encuesta y navega a resultados.
+- Estudiante se une por código, vota una vez y ve el registro.
+- Profesor cierra encuesta y estudiantes nuevos quedan sin permiso para votar.
+- Validación: código de unión con longitud inválida muestra error de formulario.

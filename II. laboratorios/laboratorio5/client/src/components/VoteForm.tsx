@@ -42,6 +42,7 @@ export function VoteForm({ poll, voterName, onVote, loading = false }: VoteFormP
                 <button
                   key={option.text}
                   type="button"
+                  data-testid={`vote-option-${index}`}
                   onClick={() => setSelected(index)}
                   className={cn(
                     "flex w-full items-center justify-between rounded-2xl border px-4 py-4 text-left transition-all backdrop-blur-md",

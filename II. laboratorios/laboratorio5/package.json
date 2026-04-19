@@ -1,5 +1,5 @@
 {
-  "name": "pollclass-laboratorio1",
+  "name": "pollclass-laboratorio5",
   "private": true,
   "workspaces": [
     "client",
@@ -15,11 +15,12 @@
     "test:e2e:install:deps": "playwright install --with-deps chromium",
     "test:e2e": "bun run test:e2e:install && playwright test -c tests/playwright.config.ts",
     "test:e2e:all": "bun run test:e2e",
-    "test:e2e:smoke": "bun run test:e2e:install && playwright test -c tests/playwright.config.ts tests/e2e/smoke.spec.ts",
+    "test:e2e:smoke": "bun run test:e2e:install && playwright test -c tests/playwright.config.ts tests/e2e/smoke/smoke.spec.ts",
     "test:e2e:routes": "bun run test:e2e:install && playwright test -c tests/playwright.config.ts --grep @routes --pass-with-no-tests",
     "test:e2e:professor": "bun run test:e2e:install && playwright test -c tests/playwright.config.ts --grep @professor --pass-with-no-tests",
     "test:e2e:student": "bun run test:e2e:install && playwright test -c tests/playwright.config.ts --grep @student --pass-with-no-tests",
     "test:e2e:integration": "bun run test:e2e:install && playwright test -c tests/playwright.config.ts --grep @integration --pass-with-no-tests",
+    "test:e2e:validation": "bun run test:e2e:install && playwright test -c tests/playwright.config.ts --grep @validation --pass-with-no-tests",
     "test:e2e:headed": "bun run test:e2e:install && playwright test -c tests/playwright.config.ts --headed --project=chromium",
     "test:e2e:ui": "bun run test:e2e:install && playwright test -c tests/playwright.config.ts --ui",
     "test:e2e:debug": "bun run test:e2e:install && playwright test -c tests/playwright.config.ts --debug --project=chromium",

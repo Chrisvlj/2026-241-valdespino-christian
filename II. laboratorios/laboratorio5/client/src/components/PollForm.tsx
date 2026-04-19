@@ -78,6 +78,8 @@ export function PollForm({ onSubmit, loading = false }: PollFormProps) {
               {options.map((option, index) => (
                 <div key={index} className="flex items-center gap-2">
                   <Input
+                    id={`poll-option-${index + 1}`}
+                    data-testid={`poll-option-input-${index + 1}`}
                     placeholder={`Opción ${index + 1}`}
                     value={option}
                     onChange={(event) => updateOption(index, event.target.value)}

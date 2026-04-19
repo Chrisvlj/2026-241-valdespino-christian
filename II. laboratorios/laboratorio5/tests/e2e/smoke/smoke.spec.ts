@@ -128,6 +128,7 @@ test("@smoke @routes landing renders and shows key actions", async ({ page }) =>
   await page.goto("/");
 
   await expect(page.getByRole("heading", { name: /Votaciones en clase/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /Votaciones en clase/i })).toHaveCount(1);
   await expect(page.getByRole("link", { name: "Soy Profesor" })).toBeVisible();
   await expect(page.getByRole("link", { name: "Soy Estudiante" })).toBeVisible();
 
@@ -173,8 +174,8 @@ test("@smoke @professor professor creates a poll and opens results", async ({ pa
   await expect(page.getByRole("heading", { name: /Vista del profesor/i })).toBeVisible();
 
   await page.locator("#poll-title").fill(title);
-  await page.locator('input[placeholder="Opción 1"]').fill("React");
-  await page.locator('input[placeholder="Opción 2"]').fill("Vue");
+  await page.getByTestId("poll-option-input-1").fill("React");
+  await page.getByTestId("poll-option-input-2").fill("Vue");
   await page.getByRole("button", { name: "Crear encuesta" }).click();
 
   await expect(page.getByRole("heading", { name: title })).toBeVisible();
@@ -233,20 +234,20 @@ test("@smoke @student student joins by code and votes once", async ({ page }) =>
   await page.goto("/student");
   await expect(page.getByRole("heading", { name: /Vista del estudiante/i })).toBeVisible();
 
-  await page.locator("#poll-code").fill(poll.code);
-  await page.locator("#voter-name").fill(studentName);
+  await page.getByTestId("join-poll-code").fill(poll.code);
+  await page.getByTestId("join-poll-voter-name").fill(studentName);
   await page.getByRole("button", { name: "Unirme" }).click();
 
   await expect(page.getByText(poll.title)).toBeVisible();
-  await page.getByRole("button", { name: /Opción 1/i }).click();
+  await page.getByTestId("vote-option-0").click();
   await page.getByRole("button", { name: "Votar ahora" }).click();
 
   await expect(page.getByText(studentName)).toBeVisible();
   await expect(page.getByText(/1 votos registrados/i)).toBeVisible();
 
   await page.getByRole("button", { name: "Reiniciar" }).click();
-  await page.locator("#poll-code").fill(poll.code);
-  await page.locator("#voter-name").fill(studentName);
+  await page.getByTestId("join-poll-code").fill(poll.code);
+  await page.getByTestId("join-poll-voter-name").fill(studentName);
   await page.getByRole("button", { name: "Unirme" }).click();
 
   await expect(page.getByText("Ya votaste")).toBeVisible();
@@ -286,8 +287,8 @@ test("@smoke @student closed poll blocks new student votes", async ({ page }) =>
   await expect(page.getByRole("button", { name: "Encuesta cerrada" })).toBeVisible();
 
   await page.goto("/student");
-  await page.locator("#poll-code").fill(poll.code);
-  await page.locator("#voter-name").fill(`Nuevo ${uniqueSuffix()}`);
+  await page.getByTestId("join-poll-code").fill(poll.code);
+  await page.getByTestId("join-poll-voter-name").fill(`Nuevo ${uniqueSuffix()}`);
   await page.getByRole("button", { name: "Unirme" }).click();
 
   await expect(page.getByRole("heading", { name: poll.title })).toBeVisible();

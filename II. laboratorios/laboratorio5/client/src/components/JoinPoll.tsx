@@ -33,6 +33,7 @@ export function JoinPoll({ code, voterName, onCodeChange, onVoterNameChange, onJ
             </label>
             <Input
               id="poll-code"
+              data-testid="join-poll-code"
               value={code}
               onChange={(event) => onCodeChange(event.target.value.toUpperCase())}
               placeholder="ABC123"
@@ -46,7 +47,7 @@ export function JoinPoll({ code, voterName, onCodeChange, onVoterNameChange, onJ
             <label className="text-sm font-medium" htmlFor="voter-name">
               Tu nombre
             </label>
-            <Input id="voter-name" value={voterName} onChange={(event) => onVoterNameChange(event.target.value)} placeholder="Cristian" maxLength={80} />
+            <Input id="voter-name" data-testid="join-poll-voter-name" value={voterName} onChange={(event) => onVoterNameChange(event.target.value)} placeholder="Cristian" maxLength={80} />
           </div>
 
           {error ? <p className="glass-panel rounded-xl px-3 py-2 text-sm text-rose-100">{error}</p> : null}
