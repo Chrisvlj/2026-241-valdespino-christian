@@ -29,10 +29,11 @@ jobs:
 
       - name: Wait for app to be ready
         run: |
-          timeout 60s bash -c '
+          echo "Waiting for app (importing Pokemon data from PokeAPI on first run, ~3 min)..."
+          timeout 300s bash -c '
             until curl -s http://localhost:3000 > /dev/null 2>&1; do
               echo "Waiting for app..."
-              sleep 2
+              sleep 5
             done
           '
           echo "App is ready!"

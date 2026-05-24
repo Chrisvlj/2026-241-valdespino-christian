@@ -6,8 +6,11 @@ COPY package.json bun.lockb* ./
 RUN bun install
 
 COPY . .
-RUN bun run vite build
+# Skip vite build — dist/ is pre-built
+# RUN bun run vite build
+
+RUN chmod +x docker-entrypoint.sh
 
 EXPOSE 3000
 
-CMD ["bun", "run", "src/index.ts"]
+ENTRYPOINT ["./docker-entrypoint.sh"]
