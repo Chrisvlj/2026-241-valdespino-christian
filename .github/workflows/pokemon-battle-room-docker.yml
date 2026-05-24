@@ -1,0 +1,49 @@
+name: pokemon-battle-room-docker
+
+on:
+  pull_request:
+    paths:
+      - "III. Proyectos/Proyecto_individual_ Pokemon_Battle_Room/**"
+      - ".github/workflows/pokemon-battle-room-docker.yml"
+  push:
+    branches: [master, main]
+    paths:
+      - "III. Proyectos/Proyecto_individual_ Pokemon_Battle_Room/**"
+      - ".github/workflows/pokemon-battle-room-docker.yml"
+  workflow_dispatch:
+
+jobs:
+  docker-compose-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "III. Proyectos/Proyecto_individual_ Pokemon_Battle_Room"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Docker images
+        run: docker compose build
+
+      - name: Start services
+        run: docker compose up -d
+
+      - name: Wait for app to be ready
+        run: |
+          timeout 60s bash -c '
+            until curl -s http://localhost:3000 > /dev/null 2>&1; do
+              echo "Waiting for app..."
+              sleep 2
+            done
+          '
+          echo "App is ready!"
+
+      - name: Health check
+        run: curl -f http://localhost:3000 || exit 1
+
+      - name: Show docker logs on failure
+        if: failure()
+        run: docker compose logs
+
+      - name: Cleanup
+        if: always()
+        run: docker compose down -v

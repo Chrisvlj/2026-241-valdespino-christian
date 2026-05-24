@@ -1,0 +1,32 @@
+{
+  "name": "pokemon-battle-rooms",
+  "version": "1.0.0",
+  "description": "Pokemon Battle Rooms - 1v1 Pokemon battles with rooms",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run scripts/dev.ts",
+    "build": "vite build",
+    "start": "NODE_ENV=production bun run src/index.ts",
+    "import:pokemon": "bun run scripts/import-pokemon.ts",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.0.3",
+    "@tanstack/react-router": "^1.32.0",
+    "hono": "^4.12.22",
+    "mongodb": "^6.7.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@tanstack/router-devtools": "^1.32.0",
+    "@tanstack/router-plugin": "^1.32.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.0",
+    "vitest": "^1.6.0"
+  }
+}
